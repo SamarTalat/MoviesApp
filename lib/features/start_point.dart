@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movieapp/core/utils/movies_colors.dart';
 import 'package:movieapp/features/browse/view/browse_view.dart';
+import 'package:movieapp/features/browse/view/categoryDM.dart';
 import 'package:movieapp/features/home/view/home_screen.dart';
 import 'package:movieapp/features/search/view/search_screen.dart';
 import 'package:movieapp/features/watchlist/view/watchlist_screen.dart';
@@ -68,5 +69,12 @@ class _StartPointState extends State<StartPoint> {
             ],
           )),
     );
+  }
+  CategoryDM? selectedCategory;
+  void onCategoryClick(CategoryDM newSelectedCategory){
+    selectedCategory=newSelectedCategory;
+    setState(() {
+
+    });
   }
 }

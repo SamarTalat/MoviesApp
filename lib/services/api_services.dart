@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:movieapp/core/consts/api_const.dart';
+import 'package:movieapp/models/categoryResponce.dart';
+import 'package:movieapp/models/movieModel.dart';
 import 'package:movieapp/models/respons_popular/respons_poular.dart';
 
 class ApiService {
@@ -67,4 +69,33 @@ class ApiService {
       throw "There was an error, try again later";
     }
   }
+  static Future<CategoryResponce> getCategoryMovies() async{
+    Uri url = Uri.https(ApiConstant.baseUrl, ApiConstant.sourceApi,
+        {'apiKey': '698cae66a50e0eeead2b85ccae8ff93f'});
+    try {
+      var response = await http.get(url);
+      var bodyString = response.body;
+      var json = jsonDecode(bodyString);
+      return CategoryResponce.fromJson(json);
+    } catch (e) {
+      throw e;
+    }
+  }
+  static Future<MovieModel> getMoveByGenerId(String categoryId)async{
+    Uri url =Uri.https(ApiConstant.baseUrl,ApiConstant.movieApi,{
+      'apiKey': '698cae66a50e0eeead2b85ccae8ff93f',
+      'results':categoryId
+    });
+    try{
+      var response=await http.get(url);
+      var bodyString=response.body;
+      var json=jsonDecode(bodyString);
+      return MovieModel.fromJson(json);
+    }catch (e) {
+      throw e;
+    }
+
+  }
+
+
 }

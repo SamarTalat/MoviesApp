@@ -10,4 +10,7 @@ class ApiConstant {
       "/3/discover/movie?include_adult=true&sort_by=vote_count.desc";
 
   static const imagePrefix = "https://image.tmdb.org/t/p/w500";
+  static const String sourceApi='/3/movie/changes';
+  static const String movieApi='/3/discover/movie';
+  static const String imgs='https://image.tmdb.org/t/p/w500';
 }

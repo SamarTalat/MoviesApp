@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movieapp/core/utils/movies_theme.dart';
+import 'package:movieapp/features/browse/view/category_result.dart';
 import 'package:movieapp/features/start_point.dart';
 
 void main() {
@@ -24,6 +25,8 @@ class MoviesApp extends StatelessWidget {
           initialRoute: StartPoint.routeName,
           routes: {
             StartPoint.routeName: (context) => const StartPoint(),
+            CategoryResult.routeName: (context) =>  CategoryResult(),
+
           },
         );
       },
